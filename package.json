@@ -1,0 +1,9 @@
+{
+  "name": "swarming",
+  "version": "1.0.0",
+  "description": "swarm simulation library for JavaScript",
+  "main": "index.js",
+  "repository": "git@github.com:igin/swarming.git",
+  "author": "Nicholas Pleschko <nicholas@nigi.li>",
+  "license": "MIT"
+}
