@@ -1,0 +1,8 @@
+[ignore]
+.*/swarming/node_modules
+.*/swarming-example/node_modules
+[include]
+.*/swarming-example/node_modules/swarming
+[libs]
+
+[options]

@@ -5,5 +5,9 @@
   "main": "index.js",
   "repository": "git@github.com:igin/swarming.git",
   "author": "Nicholas Pleschko <nicholas@nigi.li>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "flow-bin": "^0.42.0",
+    "lerna": "2.0.0-beta.38"
+  }
 }
