@@ -1,7 +1,12 @@
 /* @flow */
+import {SwarmSimulationEngine} from './src/Engine/SwarmSimulationEngine';
+import {Vector3, SwarmParticle, Swarm} from './src/Swarm/Swarm';
+import {ConstantVelocityStrategy} from './src/Strategies/ConstantVelocityStrategy';
 
-export function renderHelloWorld(name: string) : string {
-    return `Hello ${name}!`;
+export {
+    Vector3,
+    SwarmParticle,
+    Swarm,
+    SwarmSimulationEngine,
+    ConstantVelocityStrategy
 }
-
-export const HELLO_WORLD = 'HELLO WORLD!';

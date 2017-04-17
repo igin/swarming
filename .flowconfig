@@ -1,8 +1,13 @@
 [ignore]
-.*/swarming/node_modules
-.*/swarming-example/node_modules
+.*/node_modules
+mainloop.js
 [include]
-.*/swarming-example/node_modules/swarming
+.*/node_modules/swarming
 [libs]
+flow-typed
+./interfaces/CSSModules.js
+
 
 [options]
+module.name_mapper='.*\(.css\)' -> 'CSSModule'
+module.system=haste

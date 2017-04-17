@@ -46,10 +46,22 @@ const config = {
                     ] }
                 }],
             },
+            {
+                test: /\.scss$/,
+                use: [{
+                    loader: 'style-loader'
+                }, {
+                    loader: 'css-loader',
+                    options: {
+                        modules: true
+                    }
+                }, {
+                    loader: 'sass-loader'
+                }]
+            }
         ],
+
     },
 };
-
-console.log(config.module.rules[0]);
 
 module.exports = config;

@@ -1,25 +1,9 @@
 /* @flow */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {renderHelloWorld} from 'swarming';
-
-class HelloMessage extends React.Component {
-    props: {
-        name: string
-    };
-
-    render() {
-        return (
-            <div>
-                {
-                    renderHelloWorld(this.props.name)
-                }
-            </div>
-        );
-    }
-}
+import {AppContainer} from './components/AppContainer/AppContainer';
 
 ReactDOM.render(
-    <HelloMessage name='Swarming' />,
+    <AppContainer />,
     document.getElementById('app-container')
 );
