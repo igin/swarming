@@ -15,10 +15,12 @@ export class Vector3 {
 export class SwarmParticle {
     position: Vector3;
     velocity: Vector3;
+    orientation: Vector3;
 
-    constructor(position: Vector3, velocity: Vector3) {
+    constructor(position: Vector3, velocity: Vector3, orientation: Vector3) {
         this.position = position;
         this.velocity = velocity;
+        this.orientation = orientation;
     }
 }
 
@@ -33,8 +35,8 @@ export class Swarm {
         this.particles = this.particles.map(mappingFunction);
     }
 
-    static fromPositionsWithInitialVelocity(positions: Array<Vector3>, initialVelocity: Vector3): Swarm {
-        const particles = positions.map((position) => new SwarmParticle(position, initialVelocity));
+    static fromPositionsWithInitialVelocity(positions: Array<Vector3>, initialVelocity: Vector3, initialOrientation: Vector3): Swarm {
+        const particles = positions.map((position) => new SwarmParticle(position, initialVelocity, initialOrientation));
         return new Swarm(particles);
     }
 }

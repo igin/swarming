@@ -12,11 +12,11 @@ export class ConstantVelocityStrategy implements SwarmSimulationStrategy {
     simulateTimeStep(delta: number, swarm: Swarm): Swarm {
         swarm.applyToAllParticles((particle) => {
             const newPosition = new Vector3(
-                particle.position.x + (this.velocity.x / delta),
-                particle.position.y + (this.velocity.y / delta),
-                particle.position.z + (this.velocity.z / delta)
+                particle.position.x + (this.velocity.x * 0.001 * delta),
+                particle.position.y + (this.velocity.y * 0.001 * delta),
+                particle.position.z + (this.velocity.z * 0.001 * delta)
             );
-            return new SwarmParticle(newPosition, this.velocity);
+            return new SwarmParticle(newPosition, this.velocity, particle.orientation);
         });
         return swarm;
     }

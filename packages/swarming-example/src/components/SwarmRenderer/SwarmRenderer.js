@@ -1,6 +1,7 @@
 /* @flow */
 import React from 'react';
 import {Swarm} from 'swarming';
+import {SwarmParticleRenderer} from '../SwarmParticleRenderer/SwarmParticleRenderer';
 
 export class SwarmRenderer extends React.Component {
     props: {
@@ -9,16 +10,12 @@ export class SwarmRenderer extends React.Component {
 
     render() {
         return (
-            <div>
+            <svg>
                 {this.props.swarm.particles.map((particle) => (
-                    <div>
-                        <h1>{particle.position.x}</h1>
-                        <div>{particle.position.y}</div>
-                        <div>{particle.position.z}</div>
-                    </div>
+                    <SwarmParticleRenderer swarmParticle={particle} />
                     )
                 )}
-            </div>
+            </svg>
         );
     }
 }

@@ -15,7 +15,8 @@ type ApplicationState = {
     swarmState: SwarmState
 };
 
-class SwarmMainLoopWrapper extends MainLoopWrapper<ApplicationState> {}
+class SwarmMainLoopWrapper extends MainLoopWrapper<ApplicationState> {
+}
 
 type SwarmContainerProps = {};
 
@@ -28,8 +29,8 @@ export class SwarmContainer extends React.Component {
     constructor(props: SwarmContainerProps) {
         super(props);
 
-        const defaultBehaviour = new ConstantVelocityStrategy(new Vector3(0.5, 0.4, 0));
-        const swarmEngine = new SwarmSimulationEngine(defaultBehaviour, {});
+        const defaultStrategy = new ConstantVelocityStrategy(new Vector3(10, 10, 0));
+        const swarmEngine = new SwarmSimulationEngine(defaultStrategy, {});
         this.state = {
             swarmEngine: swarmEngine
         };
@@ -41,11 +42,13 @@ export class SwarmContainer extends React.Component {
             frameCount: 0,
             swarmState: {
                 swarm: Swarm.fromPositionsWithInitialVelocity([
-                    new Vector3(0, 0, 0),
-                    new Vector3(1, 0, 0),
-                    new Vector3(1, 1, 0),
-                    new Vector3(0, 1, 0),
-                ], new Vector3(0.5, 0.5, 0))
+                        new Vector3(0, 0, 0),
+                        new Vector3(20, 0, 0),
+                        new Vector3(20, 20, 0),
+                        new Vector3(0, 20, 0),
+                    ],
+                    new Vector3(10, 10, 0),
+                    new Vector3(10, 10, 0))
             }
         }
     }
